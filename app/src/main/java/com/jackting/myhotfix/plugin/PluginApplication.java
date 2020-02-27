@@ -2,8 +2,11 @@ package com.jackting.myhotfix.plugin;
 
 import android.app.Application;
 import android.content.res.Resources;
+import android.os.Build;
 
-public class PluginApplication extends Application{
+import com.jackting.myhotfix.AndroidApplication;
+
+public class PluginApplication extends AndroidApplication{
 
     static Resources pluginResource = null;
 
@@ -11,7 +14,9 @@ public class PluginApplication extends Application{
     public void onCreate() {
         super.onCreate();
 
-        LoadUtil.loadClass(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CUPCAKE) {
+            LoadUtil.loadClass(this);
+        }
         pluginResource = LoadUtil.loadResource(this);
 
         HookUtil.hookAMS();

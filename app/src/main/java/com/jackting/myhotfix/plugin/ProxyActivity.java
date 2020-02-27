@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+/**
+ * 代理Activity
+ */
 public class ProxyActivity extends Activity {
 
     @Override

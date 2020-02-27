@@ -3,7 +3,7 @@ package com.jackting.myhotfix.plugin;
 import android.app.Activity;
 import android.content.res.Resources;
 
-public class BaseActivity extends Activity{
+public class PluginBaseActivity extends Activity{
 
 
     @Override
