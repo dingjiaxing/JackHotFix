@@ -20,11 +20,13 @@ public class HookUtil {
             Class<?> cls= Class.forName("android.app.ActivityManager");
             Field sigletonField = cls.getDeclaredField("IActivityManagerSingleton");
             sigletonField.setAccessible(true);
+            //single即为 ActivityManager 里的 静态对象 IActivityManagerSingleton
             Object singleton = sigletonField.get(null);
 
             Class<?> singletonClass = Class.forName("android.util.Singleton");
             final Field mInstanceField = singletonClass.getDeclaredField("mInstance");
             mInstanceField.setAccessible(true);
+            //mInstance 即为 iActivityManager
             final Object mInstance = mInstanceField.get(singleton);
 
             Class<?> iActivityManagerClass = Class.forName("android.app.IActivityManager");
